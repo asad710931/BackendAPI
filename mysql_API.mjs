@@ -1,13 +1,8 @@
-
+//API with mysql
 import express from 'express'
 import mysql from 'mysql'
 
 const app = express();
-
-
-
-
-
 app.use(express.json())
 
 // Database intel
@@ -18,13 +13,11 @@ const db = mysql.createConnection({
     database : "4119131_kp",
     port     : 3306
 })
-
-//C onnecting to Database
+//Connecting to Database
 db.connect((err)=>{
     if (err) throw err
     console.log('Connected to database')
 })
-
 //creating database on node
 app.get('/createdb',function(req,res){
     let sql="CREATE DATABASE nodedb";
@@ -102,8 +95,6 @@ app.get('delete/:id',(req,res)=>{
         res.send(result|'Deleted')
     })
 })
-
-
 //Starting Server 
 const PORT=process.env.PORT || 3306;
 app.listen(PORT,()=>{console.log('Server running at port 8080');});
