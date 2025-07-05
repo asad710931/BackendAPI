@@ -3,15 +3,7 @@
 
 import express from 'express'
 import {MongoClient} from 'mongodb'
-import session from 'express-session'
 const app = express()
-
-app.use(session({
-    secret: 'keyboard',
-    resave: false,
-    saveUninitialized: true,
-    cookie:{maxAge:900000}
-}))
 
 //connection with database 
 let url='mongodb://localhost:27017/'
