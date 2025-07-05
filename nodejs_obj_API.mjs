@@ -1,17 +1,9 @@
 import express from 'express'
 import cors from 'cors'
-import cookieParser from 'cookie-parser'
 import csrf from 'csurf'
 import session from 'express-session'
 
 const app = express()
-
-app.use(cookieParser())
-app.use(session({
-  secret:'mykeyid',
-  resave:false,
-  saveUninitialized:false,
-}))
 
 app.use(express.json())
 app.use(cors())
