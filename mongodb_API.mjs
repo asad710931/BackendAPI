@@ -62,8 +62,7 @@ const updateOne=async(id,maidenName)=>{
     } catch (error) {
         console.log(error) 
     }finally{
-
-
+         await client.close()
     }
 }
 //Delete one raw selected by id
